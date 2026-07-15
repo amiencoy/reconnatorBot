@@ -1,0 +1,5 @@
+apiVersion: v2
+name: reconnator
+description: A Cloud-Native Reconnaissance Bot for Bug Bounty
+version: 0.1.0
+appVersion: "1.0"
