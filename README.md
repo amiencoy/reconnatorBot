@@ -1,4 +1,3 @@
----
 # Reconnator: Cloud-Native DevSecOps ChatOps Bot
 
 **Reconnator** is a lightweight, cloud-native reconnaissance bot designed for modern bug hunters and security engineers. Transitioning from a passive script to a fully interactive DevSecOps assistant, it orchestrates vulnerability scanning and seamlessly integrates into modern infrastructure (Docker/Kubernetes).
