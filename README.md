@@ -1,27 +1,26 @@
 ---
-# 🕵️‍♂️ Reconnator: Cloud-Native Reconnaissance Bot
+# Reconnator: Cloud-Native DevSecOps ChatOps Bot
 
-**Reconnator** is a lightweight, cloud-native reconnaissance bot designed for modern bug hunters and security engineers. It automates the process of discovering subdomains and seamlessly integrates into modern infrastructure (Docker/Kubernetes) to provide continuous monitoring and alerting.
+**Reconnator** is a lightweight, cloud-native reconnaissance bot designed for modern bug hunters and security engineers. Transitioning from a passive script to a fully interactive DevSecOps assistant, it orchestrates vulnerability scanning and seamlessly integrates into modern infrastructure (Docker/Kubernetes).
 
-Unlike traditional scripts, Reconnator is built with resilience in mind, featuring built-in retry mechanisms for unstable external APIs and a fully containerized architecture.
+Unlike traditional scripts, Reconnator is built with resilience in mind, featuring built-in retry mechanisms, an interactive ChatOps wizard, and a fully containerized attack architecture.
 
-## ✨ Key Features
+## Key Features & v1.0.1 Updates
 
-- **Automated Subdomain Enumeration**: Fetches transparent certificate logs via `crt.sh` to uncover hidden assets.
+- **Interactive ChatOps Wizard (v1.0.1)**: Operates as a 24/7 daemon using `aiogram` with a Telegram Inline Keyboard UI for weapon selection and scan management.
+- **Ephemeral Docker Workers (v1.0.1)**: Attack engines (like Nuclei) are executed inside disposable Docker containers (`--rm`) to prevent dependency conflicts and ensure a clean execution environment.
+- **Session Lock & Anti-Exhaustion (v1.0.1)**: Built-in locking mechanism to prevent server resource exhaustion from concurrent scan requests, complete with user cancellation options.
+- **Automated Subdomain & Live Asset Probing**: Fetches transparent certificate logs via `crt.sh` and OTX, immediately filtering for live HTTP assets before launching a strike.
 - **Resilient Engine**: Built-in timeout handling and automatic retries to bypass API gateway errors (HTTP 502/503/504).
-- **Agentic Notifications**: Native support for Telegram Webhooks to alert you immediately when new assets are discovered.
-- **Cloud-Native Ready**: Fully Dockerized with an Alpine-based footprint.
-- **Kubernetes Native**: Comes with a ready-to-deploy Helm Chart to run as a scheduled `CronJob` in any K8s cluster.
-
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-You can run Reconnator in three different ways depending on your environment.
+You can run Reconnator in different ways depending on your environment.
 
-### Option 1: Running Locally (Python)
+### Option 1: Running Locally (Daemon Mode)
 
-Ensure you have Python 3.11+ installed. It is highly recommended to use a virtual environment.
+Ensure you have Python 3.10+ installed and Docker Engine running in the background for the attack modules.
 
 ```bash
 # Clone the repository
@@ -35,25 +34,17 @@ source venv/bin/activate
 # Install Dependencies
 pip install -r requirements.txt
 
-# Run the Bot
-python src/main.py --target example.com
+# Setup Environment Variables
+export TELEGRAM_BOT_TOKEN="your_bot_token"
+
+# Run the Bot 24/7
+python src/bot.py
 
 ```
 
-### Option 2: Running via Docker
+*Once running, open your Telegram bot and type `/scan <target.com>` to trigger the interactive menu.*
 
-No Python required. Just build and run the container.
-
-```bash
-# Build the Docker image
-docker build -t reconnator:v1 .
-
-# Run the container (it will automatically be removed after execution)
-docker run --rm reconnator:v1 --target example.com
-
-```
-
-### Option 3: Kubernetes & Helm (Continuous Recon)
+### Option 2: Kubernetes & Helm (Continuous Recon - Legacy Mode)
 
 Deploy Reconnator as a scheduled CronJob in your Kubernetes cluster (e.g., K3s, Minikube, or EKS/GKE).
 
@@ -62,35 +53,8 @@ Deploy Reconnator as a scheduled CronJob in your Kubernetes cluster (e.g., K3s, 
 cd deploy/helm
 
 # Install the chart (Runs daily by default)
-helm install recon-bot . --set targetDomain="example.com"
-
-```
-
-*Note: You can easily modify the cron schedule and target domain by editing `deploy/helm/values.yaml`.*
-
----
-
-## 🔔 Setting Up Telegram Alerts
-
-To receive automated alerts directly to your phone, set the following environment variables before running the script:
-
-**Locally:**
-
-```bash
-export TELEGRAM_BOT_TOKEN="your_bot_token"
-export TELEGRAM_CHAT_ID="your_chat_id"
-python src/main.py --target example.com
-
-```
-
-**Via Helm:**
-Update your `values.yaml` or inject them during deployment:
-
-```bash
-helm install recon-bot . \
-  --set targetDomain="example.com" \
-  --set telegram.botToken="your_bot_token" \
-  --set telegram.chatId="your_chat_id"
+helm install recon-bot . --set targetDomain="example.com" \
+  --set telegram.botToken="your_bot_token"
 
 ```
 
@@ -103,13 +67,21 @@ helm install recon-bot . \
 ├── .github/workflows/    # CI/CD pipelines
 ├── deploy/helm/          # Kubernetes Helm Chart
 ├── src/                  # Core Python modules
-│   ├── modules/          # Fetchers and Notifiers
+│   ├── modules/          # Fetchers, HTTP Prober, and Attack Engines
 │   ├── utils/            # Loggers
-│   └── main.py           # Application Entrypoint
+│   ├── main.py           # Legacy CLI Entrypoint
+│   └── bot.py            # ChatOps Daemon Entrypoint (v1.0.1)
 ├── Dockerfile            # Alpine-based container blueprint
 └── requirements.txt      # Python dependencies
 
 ```
+
+## Roadmap
+
+* NMap integration for non-HTTP port mapping.
+* Ffuf integration for deep directory fuzzing.
+* **Layer 3 AI Analysis:** AI-powered alert filtering to reduce false positives.
+* Automated report generation (PDF, JSON, HTML).
 
 ## 🤝 Contributing
 
