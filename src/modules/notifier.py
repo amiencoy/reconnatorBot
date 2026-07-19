@@ -35,7 +35,7 @@ def send_telegram_message(target, live_targets, dead_count):
     }
 
     try:
-        # Pake httpx sinkronus karena pengiriman notif ini berjalan di akhir eksekusi
+        # Pake httpx sinkronus karena ngirim notifnya belakangan
         with httpx.Client() as client:
             response = client.post(url, json=payload, timeout=10.0)
             response.raise_for_status()

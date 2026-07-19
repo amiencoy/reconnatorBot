@@ -12,23 +12,20 @@ async def check_url(client, url):
         response = await client.get(target_url, timeout=10.0, follow_redirects=True)
         return url, response.status_code
     except httpx.RequestError:
-        # Kalau HTTPS gagal (timeout/connection refused), coba HTTP biasa
+        # Kalau HTTPS gagal, coba HTTP ajah
         try:
             target_url = f"http://{url}"
             response = await client.get(target_url, timeout=10.0, follow_redirects=True)
             return url, response.status_code
         except httpx.RequestError:
-            # Kalau dua-duanya gagal, berarti servernya mungkin mati, atau mungkin perasaannya udah sama-sama mati
+            # Kalau dua-duanya gagal, berarti servernya mungkin mati, atau mungkin perasaan kalian yang udah sama-sama mati
             return url, 0
 
 async def probe_subdomains(subdomains):
     logger.info(f"Starting HTTP probing for {len(subdomains)} subdomains...")
     results = {'live': [], 'dead': []}
-    
-    # di limit 50 biar ga kena rate-limit/IP block gara-gara dikira DDoS attack, dan max_keepalive_connections biar koneksi yang udah dibuka bisa dipake lagi
     limits = httpx.Limits(max_connections=50, max_keepalive_connections=10)
     async with httpx.AsyncClient(limits=limits, verify=False) as client:
-        # Daftar task, biar eksekusinya paralel, jadi cepet tapi tetep bisa ditinggal ngopi
         tasks = [check_url(client, sub) for sub in subdomains]
         responses = await asyncio.gather(*tasks)
         
