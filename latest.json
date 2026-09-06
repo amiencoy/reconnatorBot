@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "source": "github_rest_api",
+  "repository": "amiencoy/Reconnator",
+  "captured_at": "2026-09-06T14:36:34.849861+00:00",
+  "window": "GitHub rolling 14 days; UTC; current day may be partial",
+  "data": {
+    "clones": {
+      "count": 401,
+      "uniques": 141,
+      "clones": [
+        {
+          "timestamp": "2026-08-23T00:00:00Z",
+          "count": 0,
+          "uniques": 0
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00Z",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "timestamp": "2026-08-25T00:00:00Z",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "timestamp": "2026-08-26T00:00:00Z",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "timestamp": "2026-08-27T00:00:00Z",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "timestamp": "2026-08-28T00:00:00Z",
+          "count": 22,
+          "uniques": 14
+        },
+        {
+          "timestamp": "2026-08-29T00:00:00Z",
+          "count": 242,
+          "uniques": 62
+        },
+        {
+          "timestamp": "2026-08-30T00:00:00Z",
+          "count": 20,
+          "uniques": 12
+        },
+        {
+          "timestamp": "2026-08-31T00:00:00Z",
+          "count": 78,
+          "uniques": 29
+        },
+        {
+          "timestamp": "2026-09-01T00:00:00Z",
+          "count": 12,
+          "uniques": 12
+        },
+        {
+          "timestamp": "2026-09-02T00:00:00Z",
+          "count": 9,
+          "uniques": 6
+        },
+        {
+          "timestamp": "2026-09-03T00:00:00Z",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "timestamp": "2026-09-04T00:00:00Z",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "timestamp": "2026-09-05T00:00:00Z",
+          "count": 9,
+          "uniques": 8
+        }
+      ]
+    },
+    "views": {
+      "count": 758,
+      "uniques": 26,
+      "views": [
+        {
+          "timestamp": "2026-08-23T00:00:00Z",
+          "count": 14,
+          "uniques": 2
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00Z",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "timestamp": "2026-08-25T00:00:00Z",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "timestamp": "2026-08-26T00:00:00Z",
+          "count": 9,
+          "uniques": 4
+        },
+        {
+          "timestamp": "2026-08-27T00:00:00Z",
+          "count": 60,
+          "uniques": 4
+        },
+        {
+          "timestamp": "2026-08-28T00:00:00Z",
+          "count": 126,
+          "uniques": 2
+        },
+        {
+          "timestamp": "2026-08-29T00:00:00Z",
+          "count": 421,
+          "uniques": 1
+        },
+        {
+          "timestamp": "2026-08-30T00:00:00Z",
+          "count": 44,
+          "uniques": 4
+        },
+        {
+          "timestamp": "2026-08-31T00:00:00Z",
+          "count": 37,
+          "uniques": 4
+        },
+        {
+          "timestamp": "2026-09-01T00:00:00Z",
+          "count": 0,
+          "uniques": 0
+        },
+        {
+          "timestamp": "2026-09-02T00:00:00Z",
+          "count": 14,
+          "uniques": 2
+        },
+        {
+          "timestamp": "2026-09-03T00:00:00Z",
+          "count": 28,
+          "uniques": 8
+        },
+        {
+          "timestamp": "2026-09-04T00:00:00Z",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "timestamp": "2026-09-05T00:00:00Z",
+          "count": 0,
+          "uniques": 0
+        }
+      ]
+    },
+    "referrers": [
+      {
+        "referrer": "github.com",
+        "count": 168,
+        "uniques": 6
+      },
+      {
+        "referrer": "l.instagram.com",
+        "count": 3,
+        "uniques": 3
+      }
+    ],
+    "paths": [
+      {
+        "path": "/amiencoy/Reconnator",
+        "title": "Overview",
+        "count": 175,
+        "uniques": 25
+      },
+      {
+        "path": "/amiencoy/Reconnator/actions",
+        "title": "/actions",
+        "count": 33,
+        "uniques": 1
+      },
+      {
+        "path": "/amiencoy/Reconnator/wiki",
+        "title": "/wiki",
+        "count": 23,
+        "uniques": 1
+      },
+      {
+        "path": "/amiencoy/Reconnator/pulls",
+        "title": "/pulls",
+        "count": 19,
+        "uniques": 2
+      },
+      {
+        "path": "/amiencoy/Reconnator/new/feat/provider-agnostic-agent-core",
+        "title": "/new/feat/provider-agnostic-agent-core",
+        "count": 19,
+        "uniques": 1
+      },
+      {
+        "path": "/amiencoy/Reconnator/branches",
+        "title": "/branches",
+        "count": 16,
+        "uniques": 1
+      },
+      {
+        "path": "/amiencoy/Reconnator/projects",
+        "title": "/projects",
+        "count": 14,
+        "uniques": 2
+      },
+      {
+        "path": "/amiencoy/Reconnator/wiki/_new",
+        "title": "/wiki/_new",
+        "count": 14,
+        "uniques": 1
+      },
+      {
+        "path": "/amiencoy/Reconnator/tree/main/src",
+        "title": "/tree/main/src",
+        "count": 11,
+        "uniques": 4
+      },
+      {
+        "path": "/amiencoy/Reconnator/issues",
+        "title": "/issues",
+        "count": 10,
+        "uniques": 3
+      }
+    ]
+  }
+}
