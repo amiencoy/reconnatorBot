@@ -27,6 +27,15 @@ It orchestrates vulnerability scanning, dynamically routes tools, and seamlessly
 
 ---
 
+## 📊 Repository traffic
+
+See the [public traffic archive](https://github.com/amiencoy/Reconnator/tree/traffic-data)
+for timestamped GitHub traffic snapshots after the first successful collection.
+The [initial screenshot baseline](docs/traffic-baseline.json) covers August 23–September 5, 2026:
+**758 views, 26 unique visitors, 401 clones, and 141 unique cloners**.
+These are repository traffic metrics, not active-user counts.
+See [collection and methodology](docs/TRAFFIC.md).
+
 ## 📚 Documentation
 
 The complete operational and development documentation is available in the
@@ -173,3 +182,4 @@ SPDX license expression: `MIT OR Apache-2.0`.
 <p align="center">
   <i><small>Built with code and coffee by amiencoy</small></i>
 </p>
+

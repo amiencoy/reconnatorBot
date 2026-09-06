@@ -1,0 +1,114 @@
+{
+  "source": "owner_provided_screenshots_manual_transcription",
+  "captured_at": null,
+  "period_start": "2026-08-23",
+  "period_end": "2026-09-05",
+  "timezone": "UTC",
+  "totals": {
+    "views": 758,
+    "unique_visitors": 26,
+    "clones": 401,
+    "unique_cloners": 141
+  },
+  "daily": [
+    {
+      "date": "2026-08-23",
+      "views": 14,
+      "unique_visitors": 2,
+      "clones": 0,
+      "unique_cloners": 0
+    },
+    {
+      "date": "2026-08-24",
+      "views": 2,
+      "unique_visitors": 2,
+      "clones": 1,
+      "unique_cloners": 1
+    },
+    {
+      "date": "2026-08-25",
+      "views": 1,
+      "unique_visitors": 1,
+      "clones": 1,
+      "unique_cloners": 1
+    },
+    {
+      "date": "2026-08-26",
+      "views": 9,
+      "unique_visitors": 4,
+      "clones": 1,
+      "unique_cloners": 1
+    },
+    {
+      "date": "2026-08-27",
+      "views": 60,
+      "unique_visitors": 4,
+      "clones": 2,
+      "unique_cloners": 2
+    },
+    {
+      "date": "2026-08-28",
+      "views": 126,
+      "unique_visitors": 2,
+      "clones": 22,
+      "unique_cloners": 14
+    },
+    {
+      "date": "2026-08-29",
+      "views": 421,
+      "unique_visitors": 1,
+      "clones": 242,
+      "unique_cloners": 62
+    },
+    {
+      "date": "2026-08-30",
+      "views": 44,
+      "unique_visitors": 4,
+      "clones": 20,
+      "unique_cloners": 12
+    },
+    {
+      "date": "2026-08-31",
+      "views": 37,
+      "unique_visitors": 4,
+      "clones": 78,
+      "unique_cloners": 29
+    },
+    {
+      "date": "2026-09-01",
+      "views": 0,
+      "unique_visitors": 0,
+      "clones": 12,
+      "unique_cloners": 12
+    },
+    {
+      "date": "2026-09-02",
+      "views": 14,
+      "unique_visitors": 2,
+      "clones": 9,
+      "unique_cloners": 6
+    },
+    {
+      "date": "2026-09-03",
+      "views": 28,
+      "unique_visitors": 8,
+      "clones": 1,
+      "unique_cloners": 1
+    },
+    {
+      "date": "2026-09-04",
+      "views": 2,
+      "unique_visitors": 1,
+      "clones": 3,
+      "unique_cloners": 3
+    },
+    {
+      "date": "2026-09-05",
+      "views": 0,
+      "unique_visitors": 0,
+      "clones": 9,
+      "unique_cloners": 8
+    }
+  ]
+}
+
