@@ -1,0 +1,54 @@
+# ==================================================================================== #
+# Archive GitHub traffic daily to a public data branch and allow manual collection.     #
+# The read-only PAT reads traffic; GITHUB_TOKEN writes only the archive branch.          #
+# ==================================================================================== #
+
+name: Archive repository traffic
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-traffic-archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    if: github.repository == 'amiencoy/Reconnator' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - name: Collect traffic
+        env:
+          REPO_TRAFFIC_TOKEN: ${{ secrets.REPO_TRAFFIC_TOKEN }}
+        run: |
+          python3 scripts/collect_traffic.py --output "$RUNNER_TEMP/traffic-output"
+          cp docs/traffic-baseline.json "$RUNNER_TEMP/traffic-output/baseline.json"
+      - name: Publish archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          remote_ref=$(git ls-remote --heads origin refs/heads/traffic-data)
+          if [[ -n "$remote_ref" ]]; then
+            git fetch --no-tags origin refs/heads/traffic-data
+            git switch --force-create traffic-data FETCH_HEAD
+          else
+            git switch --orphan traffic-data
+          fi
+          cp -R "$RUNNER_TEMP/traffic-output/." .
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md latest.json baseline.json snapshots/
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'chore: archive repository traffic'
+          git push origin HEAD:refs/heads/traffic-data
