@@ -6,7 +6,7 @@
 
 **Reconnator** has evolved. What started as a simple, scheduled passive reconnaissance script is now a fully interactive, AI-driven Reconnaisance assistant. Powered by a provider-agnostic agent core and the Model Context Protocol (MCP), Reconnator can use local or hosted models through an OpenAI-compatible API.
 
-It orchestrates vulnerability scanning, dynamically routes tools, and seamlessly integrates into modern infrastructure (Docker/Kubernetes) using a container-native attack architecture.
+It orchestrates vulnerability scanning, dynamically routes tools, and seamlessly integrates into modern infrastructure (Docker/Kubernetes) using a container-native architecture.
 
 ---
 
